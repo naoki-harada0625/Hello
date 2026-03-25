@@ -4,5 +4,17 @@
 </head>
 <body>
     <h1>Hello World</h1>
+    <button type="button" onclick="showToday()">今日の日付を表示</button>
+    <p id="todayDate"></p>
+
+    <script>
+        function showToday() {
+            const today = new Date();
+            const formattedDate = today.getFullYear() + "年"
+                + (today.getMonth() + 1) + "月"
+                + today.getDate() + "日";
+            document.getElementById("todayDate").textContent = formattedDate;
+        }
+    </script>
 </body>
 </html>
