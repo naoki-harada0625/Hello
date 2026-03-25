@@ -6,6 +6,7 @@
     <h1>Hello World</h1>
     <button type="button" onclick="showToday()">今日の日付を表示</button>
     <p id="todayDate"></p>
+    <p id="currentTime"></p>
 
     <script>
         function showToday() {
@@ -15,6 +16,17 @@
                 + today.getDate() + "日";
             document.getElementById("todayDate").textContent = formattedDate;
         }
+
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, "0");
+            const m = String(now.getMinutes()).padStart(2, "0");
+            const s = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("currentTime").textContent = "現在時刻: " + h + ":" + m + ":" + s;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
     </script>
 </body>
 </html>
